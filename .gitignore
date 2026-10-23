@@ -1,0 +1,7 @@
+.venv/
+.venv-gpu/
+artifacts/
+data/
+__pycache__/
+*.py[cod]
+*.log

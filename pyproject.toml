@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secure-audio"
+version = "0.1.0"
+description = "Reproducible ASVspoof 2019 LA countermeasure experiments"
+requires-python = ">=3.11,<3.13"
+
+[tool.setuptools.packages.find]
+include = ["secure_audio*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

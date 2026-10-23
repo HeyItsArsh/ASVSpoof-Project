@@ -1,0 +1,45 @@
+data_root: data/LA
+output_root: artifacts\ablations\length_2s
+cache_root: artifacts/cache
+seeds:
+- 13
+- 37
+- 73
+audio:
+  sample_rate: 16000
+  seconds: 2.0
+  min_seconds: 0.1
+  silence_rms: 1.0e-05
+features:
+  n_fft: 512
+  hop_length: 160
+  n_mels: 64
+  n_mfcc: 20
+  spectrogram: logmel
+augmentation:
+  enabled: false
+  noise_snr_db:
+  - 20.0
+  - 35.0
+  gain_db:
+  - -6.0
+  - 6.0
+baseline:
+  svm_c:
+  - 0.1
+  - 1.0
+  - 10.0
+  boosting_leaves:
+  - 7
+  - 15
+  - 31
+  boosting_iterations: 150
+deep:
+  epochs: 20
+  batch_size: 16
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  patience: 5
+  workers: 0
+  threads: 4
+  device: auto
